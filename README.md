@@ -2,6 +2,7 @@
 
 Airflow - сборка от bitnami
 https://hub.docker.com/r/bitnami/airflow/
+
 Для соединения с Clickhouse - airflow-clickhouse-plugin
 https://github.com/whisklabs/airflow-clickhouse-plugin/blob/master/README.md
 
