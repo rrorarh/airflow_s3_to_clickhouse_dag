@@ -13,7 +13,15 @@ https://github.com/whisklabs/airflow-clickhouse-plugin/blob/master/README.md
 Задача: проверить S3 bucket на наличие файлов с сырыми данными (отчеты в формате csv в zip-архиве, поступающие из внешней системы или загруженные вручную), импортировать данные в существующую таблицу Clickhouse, сформировать и выгрузить в другой s3 bucket статистические отчеты.
 
 Общая схема пайплайна:
-
+```mermaid
+  flowchart TD
+    A[AWS S3] --> B[Airflow]
+    B -->C[Clickhouse]
+    C -->D[Airflow]
+    D -->E[AWS S3]
+    
+```
+Даг:
 ```mermaid
   flowchart TD
     A[check s3 source bucket] --> B{Is there any new files?}
